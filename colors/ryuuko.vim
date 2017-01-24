@@ -40,7 +40,7 @@ if &t_Co >= 256 || has("gui_running")
 		hi TermCursorNC ctermbg=3 ctermfg=0 cterm=NONE guibg=#bfb7a1 guifg=#232c33 gui=NONE
 		hi VertSplit ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
 		hi Title ctermbg=NONE ctermfg=4 cterm=NONE guibg=NONE guifg=#7c9fa6 gui=NONE
-		hi CursorLine ctermbg=NONE ctermfg=8 cterm=NONE guibg=NONE guifg=#70838c gui=NONE
+		hi CursorLine ctermbg=NONE ctermfg=8 cterm=NONE guibg=NONE guifg=NONE gui=NONE
 		hi LineNr ctermbg=NONE ctermfg=8 cterm=NONE guibg=NONE guifg=#70838c gui=NONE
 		hi CursorLineNr ctermbg=NONE ctermfg=8 cterm=NONE guibg=NONE guifg=#70838c gui=NONE
 		hi helpLeadBlank ctermbg=NONE ctermfg=7 cterm=NONE guibg=NONE guifg=#f0f0f0 gui=NONE
