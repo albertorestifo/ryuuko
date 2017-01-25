@@ -63,7 +63,7 @@ if &t_Co >= 256 || has("gui_running")
 		hi Search ctermbg=3 ctermfg=0 cterm=NONE guibg=#bfb7a1 guifg=#232c33 gui=NONE
 		hi Directory ctermbg=NONE ctermfg=4 cterm=NONE guibg=NONE guifg=#7c9fa6 gui=NONE
 		hi MatchParen ctermbg=8 ctermfg=0 cterm=NONE guibg=#70838c guifg=#232c33 gui=NONE
-		hi ColorColumn ctermbg=8 ctermfg=NONE cterm=NONE guibg=#70838c guifg=NONE gui=NONE
+		hi ColorColumn ctermbg=8 ctermfg=NONE cterm=NONE guibg=#384651 guifg=NONE gui=NONE
 		hi signColumn ctermbg=NONE ctermfg=4 cterm=NONE guibg=NONE guifg=#7c9fa6 gui=NONE
 		hi ErrorMsg ctermbg=NONE ctermfg=8 cterm=NONE guibg=NONE guifg=#70838c gui=NONE
 		hi ModeMsg ctermbg=NONE ctermfg=2 cterm=NONE guibg=NONE guifg=#78a090 gui=NONE
