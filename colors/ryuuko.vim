@@ -96,7 +96,8 @@ call s:HL('String', s:color2)
 call s:HL('Number', s:color3)
 call s:HL('Todo', s:color3, s:none, s:bold)
 
-hi Todo ctermbg=8 ctermfg=3 cterm=NONE guibg=#70838c guifg=#bfb7a1 gui=NONE
+" TODO Example
+
 hi Type ctermbg=NONE ctermfg=3 cterm=NONE guibg=NONE guifg=#bfb7a1 gui=NONE
 hi Underlined ctermbg=NONE ctermfg=1 cterm=underline guibg=NONE guifg=#99736e gui=underline
 hi StatusLine ctermbg=7 ctermfg=0 cterm=NONE guibg=#f0f0f0 guifg=#232c33 gui=NONE
