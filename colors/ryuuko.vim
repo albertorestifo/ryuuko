@@ -40,6 +40,7 @@ let s:color8 = ['#70838c', 8]
 " Stlye helprs
 let s:none = ['NONE', 'NONE']
 let s:bold = 'bold,'
+let s:underline = 'underline,'
 
 " }}}
 
@@ -95,13 +96,11 @@ call s:HL('Statement', s:color1)
 call s:HL('String', s:color2)
 call s:HL('Number', s:color3)
 call s:HL('Todo', s:color3, s:none, s:bold)
+call s:HL('Type', s:color3)
+call s:HL('Underlined', s:color1, s:none, s:underline)
+call s:HL('StatusLine', s:color0, s:color7)
+call s:HL('StatusLineNC', s:none)
 
-" TODO Example
-
-hi Type ctermbg=NONE ctermfg=3 cterm=NONE guibg=NONE guifg=#bfb7a1 gui=NONE
-hi Underlined ctermbg=NONE ctermfg=1 cterm=underline guibg=NONE guifg=#99736e gui=underline
-hi StatusLine ctermbg=7 ctermfg=0 cterm=NONE guibg=#f0f0f0 guifg=#232c33 gui=NONE
-hi StatusLineNC ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
 hi TabLine ctermbg=NONE ctermfg=8 cterm=NONE guibg=NONE guifg=#70838c gui=NONE
 hi TabLineFill ctermbg=NONE ctermfg=8 cterm=NONE guibg=NONE guifg=#70838c gui=NONE
 hi TabLineSel ctermbg=4 ctermfg=0 cterm=NONE guibg=#7c9fa6 guifg=#232c33 gui=NONE
