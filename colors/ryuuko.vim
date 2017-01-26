@@ -37,6 +37,10 @@ let s:color6 = ['#99BFBA', 6]
 let s:color7 = ['#f0f0f0', 7]
 let s:color8 = ['#70838c', 8]
 
+" Stlye helprs
+let s:none = ['NONE', 'NONE']
+let s:bold = 'bold,'
+
 " }}}
 
 " Highlighting Function: {{{
@@ -80,18 +84,18 @@ endfunction
 " General Groups: {{{
 
 call s:HL('Normal', s:color7, s:color0)
+call s:HL('NonText', s:color0)
+call s:HL('Comment', s:color8)
+call s:HL('Error', s:color7, s:color1)
+call s:HL('Identifier', s:color1)
+call s:HL('Ignore', s:color0, s:color8)
+call s:HL('PreProc', s:color3)
+call s:HL('Special', s:color6)
+call s:HL('Statement', s:color1)
+call s:HL('String', s:color2)
+call s:HL('Number', s:color3)
+call s:HL('Todo', s:color3, s:none, s:bold)
 
-hi NonText ctermbg=NONE ctermfg=0 cterm=NONE guibg=NONE guifg=#232c33 gui=NONE
-hi Comment ctermbg=NONE ctermfg=8 cterm=NONE guibg=NONE guifg=#70838c gui=NONE
-hi Constant ctermbg=NONE ctermfg=3 cterm=NONE guibg=NONE guifg=#bfb7a1 gui=NONE
-hi Error ctermbg=1 ctermfg=7 cterm=NONE guibg=#99736e guifg=#f0f0f0 gui=NONE
-hi Identifier ctermbg=NONE ctermfg=1 cterm=NONE guibg=NONE guifg=#99736e gui=NONE
-hi Ignore ctermbg=8 ctermfg=0 cterm=NONE guibg=#70838c guifg=#232c33 gui=NONE
-hi PreProc ctermbg=NONE ctermfg=3 cterm=NONE guibg=NONE guifg=#bfb7a1 gui=NONE
-hi Special ctermbg=NONE ctermfg=6 cterm=NONE guibg=NONE guifg=#99BFBA gui=NONE
-hi Statement ctermbg=NONE ctermfg=1 cterm=NONE guibg=NONE guifg=#99736e gui=NONE
-hi String ctermbg=NONE ctermfg=2 cterm=NONE guibg=NONE guifg=#78a090 gui=NONE
-hi Number ctermbg=NONE ctermfg=3 cterm=NONE guibg=NONE guifg=#bfb7a1 gui=NONE
 hi Todo ctermbg=8 ctermfg=3 cterm=NONE guibg=#70838c guifg=#bfb7a1 gui=NONE
 hi Type ctermbg=NONE ctermfg=3 cterm=NONE guibg=NONE guifg=#bfb7a1 gui=NONE
 hi Underlined ctermbg=NONE ctermfg=1 cterm=underline guibg=NONE guifg=#99736e gui=underline
@@ -237,167 +241,6 @@ hi SignifySignChange ctermbg=NONE ctermfg=4 cterm=NONE guibg=NONE guifg=#7c9fa6 
 hi SignifySignDelete ctermbg=NONE ctermfg=1 cterm=NONE guibg=NONE guifg=#99736e gui=NONE
 hi NERDTreeDirSlash ctermbg=NONE ctermfg=4 cterm=NONE guibg=NONE guifg=#7c9fa6 gui=NONE
 hi NERDTreeExecFile ctermbg=NONE ctermfg=7 cterm=NONE guibg=NONE guifg=#f0f0f0 gui=NONE
-elseif &t_Co == 8 || $TERM !~# '^linux' || &t_Co == 16
-  set t_Co=16
-  hi Normal ctermbg=black ctermfg=white cterm=NONE
-  set background=dark
-  hi NonText ctermbg=NONE ctermfg=black cterm=NONE
-  hi Comment ctermbg=NONE ctermfg=gray cterm=NONE
-  hi Constant ctermbg=NONE ctermfg=yellow cterm=NONE
-  hi Error ctermbg=red ctermfg=white cterm=NONE
-  hi Identifier ctermbg=NONE ctermfg=red cterm=NONE
-  hi Ignore ctermbg=gray ctermfg=black cterm=NONE
-  hi PreProc ctermbg=NONE ctermfg=yellow cterm=NONE
-  hi Special ctermbg=NONE ctermfg=cyan cterm=NONE
-  hi Statement ctermbg=NONE ctermfg=red cterm=NONE
-  hi String ctermbg=NONE ctermfg=green cterm=NONE
-  hi Number ctermbg=NONE ctermfg=yellow cterm=NONE
-  hi Todo ctermbg=gray ctermfg=yellow cterm=NONE
-  hi Type ctermbg=NONE ctermfg=yellow cterm=NONE
-  hi Underlined ctermbg=NONE ctermfg=red cterm=underline
-  hi StatusLine ctermbg=white ctermfg=black cterm=NONE
-  hi StatusLineNC ctermbg=NONE ctermfg=NONE cterm=NONE
-  hi TabLine ctermbg=NONE ctermfg=gray cterm=NONE
-  hi TabLineFill ctermbg=NONE ctermfg=gray cterm=NONE
-  hi TabLineSel ctermbg=blue ctermfg=black cterm=NONE
-  hi TermCursorNC ctermbg=yellow ctermfg=black cterm=NONE
-  hi VertSplit ctermbg=NONE ctermfg=NONE cterm=NONE
-  hi Title ctermbg=NONE ctermfg=blue cterm=NONE
-  hi CursorLine ctermbg=NONE ctermfg=gray cterm=NONE
-  hi LineNr ctermbg=NONE ctermfg=gray cterm=NONE
-  hi CursorLineNr ctermbg=NONE ctermfg=gray cterm=NONE
-  hi helpLeadBlank ctermbg=NONE ctermfg=white cterm=NONE
-  hi helpNormal ctermbg=NONE ctermfg=white cterm=NONE
-  hi Visual ctermbg=gray ctermfg=black cterm=NONE
-  hi VisualNOS ctermbg=NONE ctermfg=red cterm=NONE
-  hi Pmenu ctermbg=gray ctermfg=white cterm=NONE
-  hi PmenuSbar ctermbg=cyan ctermfg=white cterm=NONE
-  hi PmenuSel ctermbg=blue ctermfg=black cterm=NONE
-  hi PmenuThumb ctermbg=gray ctermfg=gray cterm=NONE
-  hi FoldColumn ctermbg=NONE ctermfg=white cterm=NONE
-  hi Folded ctermbg=NONE ctermfg=gray cterm=NONE
-  hi WildMenu ctermbg=green ctermfg=black cterm=NONE
-  hi SpecialKey ctermbg=NONE ctermfg=gray cterm=NONE
-  hi DiffAdd ctermbg=NONE ctermfg=green cterm=NONE
-  hi DiffChange ctermbg=NONE ctermfg=gray cterm=NONE
-  hi DiffDelete ctermbg=NONE ctermfg=red cterm=NONE
-  hi DiffText ctermbg=NONE ctermfg=blue cterm=NONE
-  hi IncSearch ctermbg=yellow ctermfg=black cterm=NONE
-  hi Search ctermbg=yellow ctermfg=black cterm=NONE
-  hi Directory ctermbg=NONE ctermfg=blue cterm=NONE
-  hi MatchParen ctermbg=gray ctermfg=black cterm=NONE
-  hi ColorColumn ctermbg=blue ctermfg=blue cterm=NONE
-  hi signColumn ctermbg=NONE ctermfg=blue cterm=NONE
-  hi ErrorMsg ctermbg=NONE ctermfg=gray cterm=NONE
-  hi ModeMsg ctermbg=NONE ctermfg=green cterm=NONE
-  hi MoreMsg ctermbg=NONE ctermfg=green cterm=NONE
-  hi Question ctermbg=NONE ctermfg=blue cterm=NONE
-  hi WarningMsg ctermbg=red ctermfg=black cterm=NONE
-  hi Cursor ctermbg=NONE ctermfg=gray cterm=NONE
-  hi Structure ctermbg=NONE ctermfg=orange cterm=NONE
-  hi CursorColumn ctermbg=gray ctermfg=white cterm=NONE
-  hi ModeMsg ctermbg=NONE ctermfg=white cterm=NONE
-  hi SpellBad ctermbg=NONE ctermfg=red cterm=underline
-  hi SpellCap ctermbg=NONE ctermfg=blue cterm=underline
-  hi SpellLocal ctermbg=NONE ctermfg=orange cterm=underline
-  hi SpellRare ctermbg=NONE ctermfg=cyan cterm=underline
-  hi Boolean ctermbg=NONE ctermfg=orange cterm=NONE
-  hi Character ctermbg=NONE ctermfg=red cterm=NONE
-  hi Conditional ctermbg=NONE ctermfg=orange cterm=NONE
-  hi Define ctermbg=NONE ctermfg=orange cterm=NONE
-  hi Delimiter ctermbg=NONE ctermfg=orange cterm=NONE
-  hi Float ctermbg=NONE ctermfg=orange cterm=NONE
-  hi Include ctermbg=NONE ctermfg=blue cterm=NONE
-  hi Keyword ctermbg=NONE ctermfg=orange cterm=NONE
-  hi Label ctermbg=NONE ctermfg=yellow cterm=NONE
-  hi Operator ctermbg=NONE ctermfg=white cterm=NONE
-  hi Repeat ctermbg=NONE ctermfg=yellow cterm=NONE
-  hi SpecialChar ctermbg=NONE ctermfg=orange cterm=NONE
-  hi Tag ctermbg=NONE ctermfg=yellow cterm=NONE
-  hi Typedef ctermbg=NONE ctermfg=yellow cterm=NONE
-  hi vimUserCommand ctermbg=NONE ctermfg=red cterm=BOLD
-  hi link vimMap vimUserCommand
-  hi link vimLet vimUserCommand
-  hi link vimCommand vimUserCommand
-  hi link vimFTCmd vimUserCommand
-  hi link vimAutoCmd vimUserCommand
-  hi link vimNotFunc vimUserCommand
-  hi vimNotation ctermbg=NONE ctermfg=blue cterm=NONE
-  hi vimMapModKey ctermbg=NONE ctermfg=blue cterm=NONE
-  hi vimBracket ctermbg=NONE ctermfg=white cterm=NONE
-  hi vimCommentString ctermbg=NONE ctermfg=gray cterm=NONE
-  hi htmlLink ctermbg=NONE ctermfg=red cterm=underline
-  hi htmlBold ctermbg=NONE ctermfg=yellow cterm=NONE
-  hi htmlItalic ctermbg=NONE ctermfg=orange cterm=NONE
-  hi htmlEndTag ctermbg=NONE ctermfg=white cterm=NONE
-  hi htmlTag ctermbg=NONE ctermfg=white cterm=NONE
-  hi htmlTagName ctermbg=NONE ctermfg=red cterm=BOLD
-  hi htmlH1 ctermbg=NONE ctermfg=white cterm=BOLD
-  hi link htmlH2 htmlH1
-  hi link htmlH3 htmlH1
-  hi link htmlH4 htmlH1
-  hi link htmlH5 htmlH1
-  hi link htmlH6 htmlH1
-  hi cssMultiColumnAttr ctermbg=NONE ctermfg=green cterm=NONE
-  hi link cssFontAttr cssMultiColumnAttr
-  hi link cssFlexibleBoxAttr cssMultiColumnAttr
-  hi cssBraces ctermbg=NONE ctermfg=white cterm=NONE
-  hi link cssAttrComma cssBraces
-  hi cssValueLength ctermbg=NONE ctermfg=white cterm=NONE
-  hi cssUnitDecorators ctermbg=NONE ctermfg=white cterm=NONE
-  hi cssValueNumber ctermbg=NONE ctermfg=white cterm=NONE
-  hi link cssValueLength cssValueNumber
-  hi cssNoise ctermbg=NONE ctermfg=gray cterm=NONE
-  hi cssTagName ctermbg=NONE ctermfg=red cterm=NONE
-  hi cssFunctionName ctermbg=NONE ctermfg=blue cterm=NONE
-  hi scssSelectorChar ctermbg=NONE ctermfg=white cterm=NONE
-  hi scssAttribute ctermbg=NONE ctermfg=white cterm=NONE
-  hi link scssDefinition cssNoise
-  hi sassidChar ctermbg=NONE ctermfg=red cterm=NONE
-  hi sassClassChar ctermbg=NONE ctermfg=orange cterm=NONE
-  hi sassInclude ctermbg=NONE ctermfg=orange cterm=NONE
-  hi sassMixing ctermbg=NONE ctermfg=orange cterm=NONE
-  hi sassMixinName ctermbg=NONE ctermfg=blue cterm=NONE
-  hi javaScript ctermbg=NONE ctermfg=white cterm=NONE
-  hi javaScriptBraces ctermbg=NONE ctermfg=white cterm=NONE
-  hi javaScriptNumber ctermbg=NONE ctermfg=orange cterm=NONE
-  hi markdownAutomaticLink ctermbg=NONE ctermfg=red cterm=underline
-  hi link markdownUrl markdownAutomaticLink
-  hi markdownError ctermbg=NONE ctermfg=white cterm=NONE
-  hi markdownCode ctermbg=NONE ctermfg=yellow cterm=NONE
-  hi markdownCodeBlock ctermbg=NONE ctermfg=yellow cterm=NONE
-  hi markdownCodeDelimiter ctermbg=NONE ctermfg=orange cterm=NONE
-  hi xdefaultsValue ctermbg=NONE ctermfg=white cterm=NONE
-  hi rubyInclude ctermbg=NONE ctermfg=blue cterm=NONE
-  hi rubyDefine ctermbg=NONE ctermfg=orange cterm=NONE
-  hi rubyFunction ctermbg=NONE ctermfg=blue cterm=NONE
-  hi rubyStringDelimiter ctermbg=NONE ctermfg=green cterm=NONE
-  hi rubyInteger ctermbg=NONE ctermfg=yellow cterm=NONE
-  hi rubyAttribute ctermbg=NONE ctermfg=blue cterm=NONE
-  hi rubyConstant ctermbg=NONE ctermfg=yellow cterm=NONE
-  hi rubyInterpolation ctermbg=NONE ctermfg=green cterm=NONE
-  hi rubyInterpolationDelimiter ctermbg=NONE ctermfg=yellow cterm=NONE
-  hi rubyRegexp ctermbg=NONE ctermfg=cyan cterm=NONE
-  hi rubySymbol ctermbg=NONE ctermfg=green cterm=NONE
-  hi rubyTodo ctermbg=NONE ctermfg=gray cterm=NONE
-  hi rubyRegexpAnchor ctermbg=NONE ctermfg=white cterm=NONE
-  hi link rubyRegexpQuantifier rubyRegexpAnchor
-  hi pythonOperator ctermbg=NONE ctermfg=orange cterm=NONE
-  hi pythonFunction ctermbg=NONE ctermfg=blue cterm=NONE
-  hi pythonRepeat ctermbg=NONE ctermfg=orange cterm=NONE
-  hi pythonStatement ctermbg=NONE ctermfg=red cterm=Bold
-  hi pythonBuiltIn ctermbg=NONE ctermfg=blue cterm=NONE
-  hi phpMemberSelector ctermbg=NONE ctermfg=white cterm=NONE
-  hi phpComparison ctermbg=NONE ctermfg=white cterm=NONE
-  hi phpParent ctermbg=NONE ctermfg=white cterm=NONE
-  hi cOperator ctermbg=NONE ctermfg=cyan cterm=NONE
-  hi cPreCondit ctermbg=NONE ctermfg=orange cterm=NONE
-  hi SignifySignAdd ctermbg=NONE ctermfg=green cterm=NONE
-  hi SignifySignChange ctermbg=NONE ctermfg=blue cterm=NONE
-  hi SignifySignDelete ctermbg=NONE ctermfg=red cterm=NONE
-  hi NERDTreeDirSlash ctermbg=NONE ctermfg=blue cterm=NONE
-  hi NERDTreeExecFile ctermbg=NONE ctermfg=white cterm=NONE
-
 
 " }}}
 
