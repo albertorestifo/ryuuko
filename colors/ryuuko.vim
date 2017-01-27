@@ -37,6 +37,9 @@ let s:color6 = ['#99BFBA', 6]
 let s:color7 = ['#f0f0f0', 7]
 let s:color8 = ['#70838c', 8]
 
+" Dark gray, sligthly brighther than the background
+let s:darkGray = ['#2a343d', 235]
+
 " Stlye helprs
 let s:none = ['NONE', 'NONE']
 let s:bold = 'bold,'
@@ -100,65 +103,62 @@ call s:HL('Type', s:color3)
 call s:HL('Underlined', s:color1, s:none, s:underline)
 call s:HL('StatusLine', s:color0, s:color7)
 call s:HL('StatusLineNC', s:none)
-
-hi TabLine ctermbg=NONE ctermfg=8 cterm=NONE guibg=NONE guifg=#70838c gui=NONE
-hi TabLineFill ctermbg=NONE ctermfg=8 cterm=NONE guibg=NONE guifg=#70838c gui=NONE
-hi TabLineSel ctermbg=4 ctermfg=0 cterm=NONE guibg=#7c9fa6 guifg=#232c33 gui=NONE
-hi TermCursorNC ctermbg=3 ctermfg=0 cterm=NONE guibg=#bfb7a1 guifg=#232c33 gui=NONE
-hi VertSplit ctermbg=NONE ctermfg=NONE cterm=NONE guibg=NONE guifg=NONE gui=NONE
-hi Title ctermbg=NONE ctermfg=4 cterm=NONE guibg=NONE guifg=#7c9fa6 gui=NONE
-hi CursorLine ctermbg=NONE ctermfg=8 cterm=NONE guibg=NONE guifg=NONE gui=NONE
-hi LineNr ctermbg=NONE ctermfg=8 cterm=NONE guibg=NONE guifg=#70838c gui=NONE
-hi CursorLineNr ctermbg=NONE ctermfg=8 cterm=NONE guibg=NONE guifg=#70838c gui=NONE
-hi helpLeadBlank ctermbg=NONE ctermfg=7 cterm=NONE guibg=NONE guifg=#f0f0f0 gui=NONE
-hi helpNormal ctermbg=NONE ctermfg=7 cterm=NONE guibg=NONE guifg=#f0f0f0 gui=NONE
-hi Visual ctermbg=8 ctermfg=0 cterm=NONE guibg=#70838c guifg=#232c33 gui=NONE
-hi VisualNOS ctermbg=NONE ctermfg=1 cterm=NONE guibg=NONE guifg=#99736e gui=NONE
-hi Pmenu ctermbg=8 ctermfg=7 cterm=NONE guibg=#70838c guifg=#f0f0f0 gui=NONE
-hi PmenuSbar ctermbg=6 ctermfg=7 cterm=NONE guibg=#99BFBA guifg=#f0f0f0 gui=NONE
-hi PmenuSel ctermbg=4 ctermfg=0 cterm=NONE guibg=#7c9fa6 guifg=#232c33 gui=NONE
-hi PmenuThumb ctermbg=8 ctermfg=8 cterm=NONE guibg=#70838c guifg=#70838c gui=NONE
-hi FoldColumn ctermbg=NONE ctermfg=7 cterm=NONE guibg=NONE guifg=#f0f0f0 gui=NONE
-hi Folded ctermbg=NONE ctermfg=8 cterm=NONE guibg=NONE guifg=#70838c gui=NONE
-hi WildMenu ctermbg=2 ctermfg=0 cterm=NONE guibg=#78a090 guifg=#232c33 gui=NONE
-hi SpecialKey ctermbg=NONE ctermfg=8 cterm=NONE guibg=NONE guifg=#70838c gui=NONE
-hi DiffAdd ctermbg=NONE ctermfg=2 cterm=NONE guibg=NONE guifg=#78a090 gui=NONE
-hi DiffChange ctermbg=NONE ctermfg=8 cterm=NONE guibg=NONE guifg=#70838c gui=NONE
-hi DiffDelete ctermbg=NONE ctermfg=1 cterm=NONE guibg=NONE guifg=#99736e gui=NONE
-hi DiffText ctermbg=NONE ctermfg=4 cterm=NONE guibg=NONE guifg=#7c9fa6 gui=NONE
-hi IncSearch ctermbg=3 ctermfg=0 cterm=NONE guibg=#bfb7a1 guifg=#232c33 gui=NONE
-hi Search ctermbg=3 ctermfg=0 cterm=NONE guibg=#bfb7a1 guifg=#232c33 gui=NONE
-hi Directory ctermbg=NONE ctermfg=4 cterm=NONE guibg=NONE guifg=#7c9fa6 gui=NONE
-hi MatchParen ctermbg=8 ctermfg=0 cterm=NONE guibg=#70838c guifg=#232c33 gui=NONE
-hi ColorColumn ctermbg=8 ctermfg=NONE cterm=NONE guibg=#384651 guifg=NONE gui=NONE
-hi signColumn ctermbg=NONE ctermfg=4 cterm=NONE guibg=NONE guifg=#7c9fa6 gui=NONE
-hi ErrorMsg ctermbg=NONE ctermfg=8 cterm=NONE guibg=NONE guifg=#70838c gui=NONE
-hi ModeMsg ctermbg=NONE ctermfg=2 cterm=NONE guibg=NONE guifg=#78a090 gui=NONE
-hi MoreMsg ctermbg=NONE ctermfg=2 cterm=NONE guibg=NONE guifg=#78a090 gui=NONE
-hi Question ctermbg=NONE ctermfg=4 cterm=NONE guibg=NONE guifg=#7c9fa6 gui=NONE
-hi WarningMsg ctermbg=1 ctermfg=0 cterm=NONE guibg=#99736e guifg=#232c33 gui=NONE
-hi Cursor ctermbg=NONE ctermfg=8 cterm=NONE guibg=NONE guifg=#70838c gui=NONE
-hi Structure ctermbg=NONE ctermfg=5 cterm=NONE guibg=NONE guifg=#BF9C86 gui=NONE
-hi CursorColumn ctermbg=8 ctermfg=7 cterm=NONE guibg=#70838c guifg=#f0f0f0 gui=NONE
-hi ModeMsg ctermbg=NONE ctermfg=7 cterm=NONE guibg=NONE guifg=#f0f0f0 gui=NONE
+call s:HL('TabLine', s:color8)
+call s:HL('TabLineFill', s:color8)
+call s:HL('TabLineSel', s:color0, s:color4)
+call s:HL('TermCursorNC', s:color0, s:color3)
+call s:HL('VertSplit', s:none)
+call s:HL('Title', s:color4)
+call s:HL('CursorLine', s:color8)
+call s:HL('LineNr', s:color8)
+call s:HL('CursorLineNr', s:color8, s:none, s:bold)
+call s:HL('Visual', s:color0, s:color8)
+call s:HL('VisualNOS', s:color1)
+call s:HL('Pmenu', s:color7, s:color8)
+call s:HL('PmenuSbar', s:color7, s:color6)
+call s:HL('PmenuSel', s:color0, s:color4)
+call s:HL('PmenuThumb', s:color8, s:color8)
+call s:HL('FoldColumn', s:color7)
+call s:HL('Folded', s:color8)
+call s:HL('WildMenu', s:color0, s:color2)
+call s:HL('SpecialKey', s:color8)
+call s:HL('DiffAdd', s:color2)
+call s:HL('DiffChange', s:color8)
+call s:HL('DiffDelete', s:color1)
+call s:HL('DiffText', s:color4)
+call s:HL('IncSearch', s:color0, s:color3)
+call s:HL('Search', s:color0, s:color3)
+call s:HL('Directory', s:color4)
+call s:HL('MatchParen', s:color0, s:color8)
+call s:HL('ColorColumn', s:none, s:darkGray)
+call s:HL('signColumn', s:color4)
+call s:HL('ErrorMsg', s:color8)
+call s:HL('ModeMsg', s:color2)
+call s:HL('MoreMsg', s:color2)
+call s:HL('Question', s:color4)
+call s:HL('WarningMsg', s:color0, s:color1)
+call s:HL('Cursor', s:color8)
+call s:HL('Structure', s:color5)
+call s:HL('CursorColumn', s:color7, s:color8)
+call s:HL('ModeMsg', s:color7)
 hi SpellBad ctermbg=NONE ctermfg=1 cterm=underline guibg=NONE guifg=#99736e gui=underline guisp=#99736e
 hi SpellCap ctermbg=NONE ctermfg=4 cterm=underline guibg=NONE guifg=#7c9fa6 gui=underline guisp=#7c9fa6
 hi SpellLocal ctermbg=NONE ctermfg=5 cterm=underline guibg=NONE guifg=#BF9C86 gui=underline guisp=#BF9C86
 hi SpellRare ctermbg=NONE ctermfg=6 cterm=underline guibg=NONE guifg=#99BFBA gui=underline guisp=#99BFBA
-hi Boolean ctermbg=NONE ctermfg=5 cterm=NONE guibg=NONE guifg=#BF9C86 gui=NONE
-hi Character ctermbg=NONE ctermfg=1 cterm=NONE guibg=NONE guifg=#99736e gui=NONE
-hi Conditional ctermbg=NONE ctermfg=5 cterm=NONE guibg=NONE guifg=#BF9C86 gui=NONE
-hi Define ctermbg=NONE ctermfg=5 cterm=NONE guibg=NONE guifg=#BF9C86 gui=NONE
-hi Delimiter ctermbg=NONE ctermfg=5 cterm=NONE guibg=NONE guifg=#BF9C86 gui=NONE
-hi Float ctermbg=NONE ctermfg=5 cterm=NONE guibg=NONE guifg=#BF9C86 gui=NONE
-hi Include ctermbg=NONE ctermfg=4 cterm=NONE guibg=NONE guifg=#7c9fa6 gui=NONE
-hi Keyword ctermbg=NONE ctermfg=5 cterm=NONE guibg=NONE guifg=#BF9C86 gui=NONE
-hi Label ctermbg=NONE ctermfg=3 cterm=NONE guibg=NONE guifg=#bfb7a1 gui=NONE
-hi Operator ctermbg=NONE ctermfg=7 cterm=NONE guibg=NONE guifg=#f0f0f0 gui=NONE
-hi Repeat ctermbg=NONE ctermfg=3 cterm=NONE guibg=NONE guifg=#bfb7a1 gui=NONE
-hi SpecialChar ctermbg=NONE ctermfg=5 cterm=NONE guibg=NONE guifg=#BF9C86 gui=NONE
-hi Tag ctermbg=NONE ctermfg=3 cterm=NONE guibg=NONE guifg=#bfb7a1 gui=NONE
-hi Typedef ctermbg=NONE ctermfg=3 cterm=NONE guibg=NONE guifg=#bfb7a1 gui=NONE
+call s:HL('Boolean', s:color5)
+call s:HL('Character', s:color1)
+call s:HL('Conditional', s:color5)
+call s:HL('Define', s:color5)
+call s:HL('Delimiter', s:color5)
+call s:HL('Float', s:color5)
+call s:HL('Include', s:color4)
+call s:HL('Keyword', s:color5)
+call s:HL('Label', s:color3)
+call s:HL('Operator', s:color7)
+call s:HL('Repeat', s:color3)
+call s:HL('SpecialChar', s:color5)
+call s:HL('Tag', s:color3)
+call s:HL('Typedef', s:color3)
 hi vimUserCommand ctermbg=NONE ctermfg=1 cterm=BOLD guibg=NONE guifg=#99736e gui=BOLD
 hi link vimMap vimUserCommand
 hi link vimLet vimUserCommand
@@ -166,15 +166,15 @@ hi link vimCommand vimUserCommand
 hi link vimFTCmd vimUserCommand
 hi link vimAutoCmd vimUserCommand
 hi link vimNotFunc vimUserCommand
-hi vimNotation ctermbg=NONE ctermfg=4 cterm=NONE guibg=NONE guifg=#7c9fa6 gui=NONE
-hi vimMapModKey ctermbg=NONE ctermfg=4 cterm=NONE guibg=NONE guifg=#7c9fa6 gui=NONE
-hi vimBracket ctermbg=NONE ctermfg=7 cterm=NONE guibg=NONE guifg=#f0f0f0 gui=NONE
-hi vimCommentString ctermbg=NONE ctermfg=8 cterm=NONE guibg=NONE guifg=#70838c gui=NONE
+call s:HL('vimNotation', s:color4)
+call s:HL('vimMapModKey', s:color4)
+call s:HL('vimBracket', s:color7)
+call s:HL('vimCommentString', s:color8)
 hi htmlLink ctermbg=NONE ctermfg=1 cterm=underline guibg=NONE guifg=#99736e gui=underline
-hi htmlBold ctermbg=NONE ctermfg=3 cterm=NONE guibg=NONE guifg=#bfb7a1 gui=NONE
-hi htmlItalic ctermbg=NONE ctermfg=5 cterm=NONE guibg=NONE guifg=#BF9C86 gui=NONE
-hi htmlEndTag ctermbg=NONE ctermfg=7 cterm=NONE guibg=NONE guifg=#f0f0f0 gui=NONE
-hi htmlTag ctermbg=NONE ctermfg=7 cterm=NONE guibg=NONE guifg=#f0f0f0 gui=NONE
+call s:HL('htmlBold', s:color3)
+call s:HL('htmlItalic', s:color5)
+call s:HL('htmlEndTag', s:color7)
+call s:HL('htmlTag', s:color7)
 hi htmlTagName ctermbg=NONE ctermfg=1 cterm=BOLD guibg=NONE guifg=#99736e gui=BOLD
 hi htmlH1 ctermbg=NONE ctermfg=7 cterm=BOLD guibg=NONE guifg=#f0f0f0 gui=BOLD
 hi link htmlH2 htmlH1
@@ -182,65 +182,72 @@ hi link htmlH3 htmlH1
 hi link htmlH4 htmlH1
 hi link htmlH5 htmlH1
 hi link htmlH6 htmlH1
-hi cssMultiColumnAttr ctermbg=NONE ctermfg=2 cterm=NONE guibg=NONE guifg=#78a090 gui=NONE
+call s:HL('cssMultiColumnAttr', s:color2)
 hi link cssFontAttr cssMultiColumnAttr
 hi link cssFlexibleBoxAttr cssMultiColumnAttr
-hi cssBraces ctermbg=NONE ctermfg=7 cterm=NONE guibg=NONE guifg=#f0f0f0 gui=NONE
+call s:HL('cssBraces', s:color7)
 hi link cssAttrComma cssBraces
-hi cssValueLength ctermbg=NONE ctermfg=7 cterm=NONE guibg=NONE guifg=#f0f0f0 gui=NONE
-hi cssUnitDecorators ctermbg=NONE ctermfg=7 cterm=NONE guibg=NONE guifg=#f0f0f0 gui=NONE
-hi cssValueNumber ctermbg=NONE ctermfg=7 cterm=NONE guibg=NONE guifg=#f0f0f0 gui=NONE
+call s:HL('cssValueLength', s:color7)
+call s:HL('cssUnitDecorators', s:color7)
+call s:HL('cssValueNumber', s:color7)
 hi link cssValueLength cssValueNumber
-hi cssNoise ctermbg=NONE ctermfg=8 cterm=NONE guibg=NONE guifg=#70838c gui=NONE
-hi cssTagName ctermbg=NONE ctermfg=1 cterm=NONE guibg=NONE guifg=#99736e gui=NONE
-hi cssFunctionName ctermbg=NONE ctermfg=4 cterm=NONE guibg=NONE guifg=#7c9fa6 gui=NONE
-hi scssSelectorChar ctermbg=NONE ctermfg=7 cterm=NONE guibg=NONE guifg=#f0f0f0 gui=NONE
-hi scssAttribute ctermbg=NONE ctermfg=7 cterm=NONE guibg=NONE guifg=#f0f0f0 gui=NONE
+call s:HL('cssNoise', s:color8)
+call s:HL('cssTagName', s:color1)
+call s:HL('cssFunctionName', s:color4)
+call s:HL('scssSelectorChar', s:color7)
+call s:HL('scssAttribute', s:color7)
 hi link scssDefinition cssNoise
-hi sassidChar ctermbg=NONE ctermfg=1 cterm=NONE guibg=NONE guifg=#99736e gui=NONE
-hi sassClassChar ctermbg=NONE ctermfg=5 cterm=NONE guibg=NONE guifg=#BF9C86 gui=NONE
-hi sassInclude ctermbg=NONE ctermfg=5 cterm=NONE guibg=NONE guifg=#BF9C86 gui=NONE
-hi sassMixing ctermbg=NONE ctermfg=5 cterm=NONE guibg=NONE guifg=#BF9C86 gui=NONE
-hi sassMixinName ctermbg=NONE ctermfg=4 cterm=NONE guibg=NONE guifg=#7c9fa6 gui=NONE
-hi javaScript ctermbg=NONE ctermfg=7 cterm=NONE guibg=NONE guifg=#f0f0f0 gui=NONE
-hi javaScriptBraces ctermbg=NONE ctermfg=7 cterm=NONE guibg=NONE guifg=#f0f0f0 gui=NONE
-hi javaScriptNumber ctermbg=NONE ctermfg=5 cterm=NONE guibg=NONE guifg=#BF9C86 gui=NONE
+call s:HL('sassidChar', s:color1)
+call s:HL('sassClassChar', s:color5)
+call s:HL('sassInclude', s:color5)
+call s:HL('sassMixing', s:color5)
+call s:HL('sassMixinName', s:color4)
+call s:HL('javaScript', s:color7)
+call s:HL('javaScriptBraces', s:color7)
+call s:HL('javaScriptNumber', s:color5)
 hi markdownAutomaticLink ctermbg=NONE ctermfg=1 cterm=underline guibg=NONE guifg=#99736e gui=underline
 hi link markdownUrl markdownAutomaticLink
-hi markdownError ctermbg=NONE ctermfg=7 cterm=NONE guibg=NONE guifg=#f0f0f0 gui=NONE
-hi markdownCode ctermbg=NONE ctermfg=3 cterm=NONE guibg=NONE guifg=#bfb7a1 gui=NONE
-hi markdownCodeBlock ctermbg=NONE ctermfg=3 cterm=NONE guibg=NONE guifg=#bfb7a1 gui=NONE
-hi markdownCodeDelimiter ctermbg=NONE ctermfg=5 cterm=NONE guibg=NONE guifg=#BF9C86 gui=NONE
-hi xdefaultsValue ctermbg=NONE ctermfg=7 cterm=NONE guibg=NONE guifg=#f0f0f0 gui=NONE
-hi rubyInclude ctermbg=NONE ctermfg=4 cterm=NONE guibg=NONE guifg=#7c9fa6 gui=NONE
-hi rubyDefine ctermbg=NONE ctermfg=5 cterm=NONE guibg=NONE guifg=#BF9C86 gui=NONE
-hi rubyFunction ctermbg=NONE ctermfg=4 cterm=NONE guibg=NONE guifg=#7c9fa6 gui=NONE
-hi rubyStringDelimiter ctermbg=NONE ctermfg=2 cterm=NONE guibg=NONE guifg=#78a090 gui=NONE
-hi rubyInteger ctermbg=NONE ctermfg=3 cterm=NONE guibg=NONE guifg=#bfb7a1 gui=NONE
-hi rubyAttribute ctermbg=NONE ctermfg=4 cterm=NONE guibg=NONE guifg=#7c9fa6 gui=NONE
-hi rubyConstant ctermbg=NONE ctermfg=3 cterm=NONE guibg=NONE guifg=#bfb7a1 gui=NONE
-hi rubyInterpolation ctermbg=NONE ctermfg=2 cterm=NONE guibg=NONE guifg=#78a090 gui=NONE
-hi rubyInterpolationDelimiter ctermbg=NONE ctermfg=3 cterm=NONE guibg=NONE guifg=#bfb7a1 gui=NONE
-hi rubyRegexp ctermbg=NONE ctermfg=6 cterm=NONE guibg=NONE guifg=#99BFBA gui=NONE
-hi rubySymbol ctermbg=NONE ctermfg=2 cterm=NONE guibg=NONE guifg=#78a090 gui=NONE
-hi rubyTodo ctermbg=NONE ctermfg=8 cterm=NONE guibg=NONE guifg=#70838c gui=NONE
-hi rubyRegexpAnchor ctermbg=NONE ctermfg=7 cterm=NONE guibg=NONE guifg=#f0f0f0 gui=NONE
+call s:HL('markdownError', s:color7)
+call s:HL('markdownCode', s:color3)
+call s:HL('markdownCodeBlock', s:color3)
+call s:HL('markdownCodeDelimiter', s:color5)
+call s:HL('xdefaultsValue', s:color7)
+call s:HL('rubyInclude', s:color4)
+call s:HL('rubyDefine', s:color5)
+call s:HL('rubyFunction', s:color4)
+call s:HL('rubyStringDelimiter', s:color2)
+call s:HL('rubyInteger', s:color3)
+call s:HL('rubyAttribute', s:color4)
+call s:HL('rubyConstant', s:color3)
+call s:HL('rubyInterpolation', s:color2)
+call s:HL('rubyInterpolationDelimiter', s:color3)
+call s:HL('rubyRegexp', s:color6)
+call s:HL('rubySymbol', s:color2)
+call s:HL('rubyTodo', s:color8)
+call s:HL('rubyRegexpAnchor', s:color7)
 hi link rubyRegexpQuantifier rubyRegexpAnchor
-hi pythonOperator ctermbg=NONE ctermfg=5 cterm=NONE guibg=NONE guifg=#BF9C86 gui=NONE
-hi pythonFunction ctermbg=NONE ctermfg=4 cterm=NONE guibg=NONE guifg=#7c9fa6 gui=NONE
-hi pythonRepeat ctermbg=NONE ctermfg=5 cterm=NONE guibg=NONE guifg=#BF9C86 gui=NONE
+call s:HL('pythonOperator', s:color5)
+call s:HL('pythonFunction', s:color4)
+call s:HL('pythonRepeat', s:color5)
 hi pythonStatement ctermbg=NONE ctermfg=1 cterm=Bold guibg=NONE guifg=#99736e gui=Bold
-hi pythonBuiltIn ctermbg=NONE ctermfg=4 cterm=NONE guibg=NONE guifg=#7c9fa6 gui=NONE
-hi phpMemberSelector ctermbg=NONE ctermfg=7 cterm=NONE guibg=NONE guifg=#f0f0f0 gui=NONE
-hi phpComparison ctermbg=NONE ctermfg=7 cterm=NONE guibg=NONE guifg=#f0f0f0 gui=NONE
-hi phpParent ctermbg=NONE ctermfg=7 cterm=NONE guibg=NONE guifg=#f0f0f0 gui=NONE
-hi cOperator ctermbg=NONE ctermfg=6 cterm=NONE guibg=NONE guifg=#99BFBA gui=NONE
-hi cPreCondit ctermbg=NONE ctermfg=5 cterm=NONE guibg=NONE guifg=#BF9C86 gui=NONE
-hi SignifySignAdd ctermbg=NONE ctermfg=2 cterm=NONE guibg=NONE guifg=#78a090 gui=NONE
-hi SignifySignChange ctermbg=NONE ctermfg=4 cterm=NONE guibg=NONE guifg=#7c9fa6 gui=NONE
-hi SignifySignDelete ctermbg=NONE ctermfg=1 cterm=NONE guibg=NONE guifg=#99736e gui=NONE
-hi NERDTreeDirSlash ctermbg=NONE ctermfg=4 cterm=NONE guibg=NONE guifg=#7c9fa6 gui=NONE
-hi NERDTreeExecFile ctermbg=NONE ctermfg=7 cterm=NONE guibg=NONE guifg=#f0f0f0 gui=NONE
+call s:HL('pythonBuiltIn', s:color4)
+call s:HL('phpMemberSelector', s:color7)
+call s:HL('phpComparison', s:color7)
+call s:HL('phpParent', s:color7)
+call s:HL('cOperator', s:color6)
+call s:HL('cPreCondit', s:color5)
+call s:HL('SignifySignAdd', s:color2)
+call s:HL('SignifySignChange', s:color4)
+call s:HL('SignifySignDelete', s:color1)
+call s:HL('NERDTreeDirSlash', s:color4)
+call s:HL('NERDTreeExecFile', s:color7)
+
+" }}}
+
+" Help: {{{
+
+call s:HL('helpLeadBlank', s:color7)
+call s:HL('helpNormal', s:color7)
 
 " }}}
 
